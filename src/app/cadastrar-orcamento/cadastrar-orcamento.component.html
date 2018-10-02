@@ -52,8 +52,9 @@
   <h3>Peças de mobília já adicionadas</h3>
   <hr>
   <ul>
-    <li *ngFor="let mobilia of mobilias">
+    <li *ngFor="let mobilia of mobilias; let i = index">
       {{mobilia.tipo}} - {{mobilia.largura}}cm
+      <button (click)="removerMobilia(i)">Remover</button>
     </li>
   </ul>
   <h3>Total do orçamento</h3>
@@ -61,6 +62,6 @@
   <div *ngIf="total_orcamento">
     {{total_orcamento}}
   </div>
-  <button type="button" (click)="mostrar_total()">Calcular</button> 
+  <button type="button" (click)="mostrar_total()">Calcular</button>
   <button>Salvar</button>
 </form>
